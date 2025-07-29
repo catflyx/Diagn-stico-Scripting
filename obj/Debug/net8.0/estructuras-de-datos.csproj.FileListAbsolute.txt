@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\estructuras-de-datos\bin\Debug\net8.0\estructuras-de-datos.exe
+C:\Users\Admin\source\repos\estructuras-de-datos\bin\Debug\net8.0\estructuras-de-datos.deps.json
+C:\Users\Admin\source\repos\estructuras-de-datos\bin\Debug\net8.0\estructuras-de-datos.runtimeconfig.json
+C:\Users\Admin\source\repos\estructuras-de-datos\bin\Debug\net8.0\estructuras-de-datos.dll
+C:\Users\Admin\source\repos\estructuras-de-datos\bin\Debug\net8.0\estructuras-de-datos.pdb
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.AssemblyInfo.cs
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.dll
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\refint\estructuras-de-datos.dll
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.pdb
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\estructuras-de-datos.genruntimeconfig.cache
+C:\Users\Admin\source\repos\estructuras-de-datos\obj\Debug\net8.0\ref\estructuras-de-datos.dll
