@@ -228,6 +228,7 @@
             int multiplicador3 = cantidadapostada * 400;
             int multiplicador4 = cantidadapostada * 50;
             int multiplicador5 = cantidadapostada * 5;
+            byte primeraesfalla = 1;
 
             string numero = "";
 
@@ -259,7 +260,7 @@
             numeroganador.Clear();
             for (int i = 0; i < 4; i++)
             {
-                numeroganador.Add(i); // un dígito aleatorio entre 0 y 9
+                numeroganador.Add(aleatorio.Next(0, 10)); // un dígito aleatorio entre 0 y 9
             }
 
             while (true)
@@ -299,71 +300,82 @@
             {
                 Console.WriteLine(d);
             }
-            for (int i = 3; i >= 0; i--)
+            for (byte i = 3; i >= 0; i--)
             {
 
                 if (digitos[i] == numeroganador[i])
                 {
                     aciertos++;
                     Console.WriteLine($"¡Coincidencia en la posición {i + 1}!");
-                    //Console.WriteLine(aciertos + " " + fallas);
+                    //Console.WriteLine(aciertos + " " + fallas);                    
                 }
                 else
                 {
                     fallas++;
                     ocupado[i] = i;
-                }
-
-                if (aciertos == 4)
-                {
-                    Console.WriteLine("Felicidades, has acertado todos los números, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador1);
-                    ganadorobtenido = true;
-                }
-
-
-                if (aciertos == 3 && fallas == 1)
-                {
-                    if (ocupado[0] == 0)
+                    if (i == 3)
                     {
-                        Console.WriteLine("Felicidades, has acertado en los tres ultimos números, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador3);
+                        primeraesfalla = i;
+                    }
+                }
+
+                if(primeraesfalla == 1)
+                {
+                    if (aciertos == 4)
+                    {
+                        Console.WriteLine("Felicidades, has acertado todos los números, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador1);
                         ganadorobtenido = true;
                     }
-                    else
+
+
+                    if (aciertos == 3 && fallas == 1)
                     {
-                        Console.WriteLine("Perdón, pero has perdido, tu apuesta dio como resultado " + perdedor);
+                        if (ocupado[0] == 0)
+                        {
+                            Console.WriteLine("Felicidades, has acertado en los tres ultimos números, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador3);
+                            ganadorobtenido = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Perdón, pero has perdido, tu apuesta dio como resultado " + perdedor);
+                        }
                     }
+
+
+
+                    if (aciertos == 2 && fallas == 2)
+                    {
+                        if (ocupado[0] == 0 && ocupado[1] == 1)
+                        {
+                            Console.WriteLine("Felicidades, has acertado en los dos ultimos números, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador4);
+                            ganadorobtenido = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Perdón, pero has perdido, tu apuesta dio como resultado " + perdedor);
+                        }
+
+                    }
+
+                    if (aciertos == 1 && fallas == 3)
+                    {
+                        if (ocupado[0] == 0 && ocupado[1] == 1 && ocupado[2] == 2)
+                        {
+                            Console.WriteLine("Felicidades, has acertado en el ultimo número, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador5);
+                            ganadorobtenido = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Perdón, pero has perdido, tu apuesta dio como resultado " + perdedor);
+                        }
+
+                    }
+                    //Console.WriteLine(aciertos + " " + fallas);
                 }
-
-
-
-                if (aciertos == 2 && fallas == 2)
+                if(primeraesfalla == 3)
                 {
-                    if (ocupado[0] == 0 && ocupado[1] == 1)
-                    {
-                        Console.WriteLine("Felicidades, has acertado en los dos ultimos números, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador4);
-                        ganadorobtenido = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Perdón, pero has perdido, tu apuesta dio como resultado " + perdedor);
-                    }
-
+                    Console.WriteLine("Lo siento pero como el ultimo número no coincide con el número ganador no pudiste ganar, ahora comprovaremos si tuviste la suerte de ganar de manera desordenada");
                 }
-
-                if (aciertos == 1 && fallas == 3)
-                {
-                    if (ocupado[0] == 0 && ocupado[1] == 1 && ocupado[2] == 2)
-                    {
-                        Console.WriteLine("Felicidades, has acertado en el ultimo número, por lo que luego de haber apostado " + cantidadapostada + " , ha logrado ganar " + multiplicador5);
-                        ganadorobtenido = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Perdón, pero has perdido, tu apuesta dio como resultado " + perdedor);
-                    }
-
-                }
-                //Console.WriteLine(aciertos + " " + fallas);
             }
             if (ganadorobtenido == false)
             {
